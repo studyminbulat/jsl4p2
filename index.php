@@ -34,5 +34,3 @@ $app->get('/info', function(){
 $app->get('/', function(){
 	return $date -> getDate();
   });
-  
-echo "1111111";
