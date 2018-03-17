@@ -27,11 +27,11 @@ $app->get('/author', function(){
     echo '<h4>Bulat Minnemullin</h4>';
   });
 $app->get('/info', function(){
-    phpinfo();
+    return phpinfo();
   });
 
 $app->get('/', function(){
-	echo ($date -> getDate());
+	return $date -> getDate();
   });
   
 
