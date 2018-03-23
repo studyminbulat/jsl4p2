@@ -16,16 +16,17 @@ $app->get('/public', function(){
     header('Access-Control-Allow-Origin: *');
     header('Content-type: text/plain; charset=utf-8');
     header('Access-Control-Allow-Methods: GET,POST,DELETE');
-  });
+  });*/
 $app->get('/print', function(){
-    header('Content-type: text/plain; charset=utf-8');
-    echo file_get_contents(basename(__FILE__));
+    $headers = ('Content-type' =>'text/plain; charset=utf-8');
+    $text = file_get_contents(basename(__FILE__));
+	return new Response ($text, 200, $headers);
   });
-*/
+
 $app->get('/author', function(){
     //header('Content-type: text/html; charset=utf-8');
     $text = '<h4>Bulat Minnemullin</h4>';
-	$headers = array('Content-Type'=>'text/html');
+	$headers = array('Content-Type'=>'text/html; charset=utf-8');
 	return new Response ($text, 200, $headers);
   });
 $app->get('/info', function(){
