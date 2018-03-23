@@ -20,11 +20,11 @@ $app->get('/print', function(){
     header('Content-type: text/plain; charset=utf-8');
     echo file_get_contents(basename(__FILE__));
   });
-
+*/
 $app->get('/author', function(){
     header('Content-type: text/html; charset=utf-8');
     echo '<h4>Bulat Minnemullin</h4>';
-  });*/
+  });
 $app->get('/info', function(){
     return phpinfo();
   });
