@@ -14,7 +14,7 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 	
 $app->get('/public', function(){
     
-	$headers = (
+	$headers = array(
 		'Access-Control-Allow-Origin: *',
 		'Content-type: text/plain'=>'charset=utf-8',
 		'Access-Control-Allow-Methods'=>'GET,POST,DELETE'
@@ -22,7 +22,7 @@ $app->get('/public', function(){
 	return new Response ('', 200, $headers);
   });*/
 $app->get('/print', function(){
-    $headers = array('Content-type' =>'text/plain; charset=utf-8');
+    $headers = array('Content-Type' =>'text/plain; charset=utf-8');
     //$text = ""; 
 	//file_get_contents(basename(__FILE__));
 	return new Response ("", 200, $headers);
