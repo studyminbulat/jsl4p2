@@ -7,11 +7,11 @@ $app = new Silex\Application();
 
 
 
-$app->get('/hello/{name}', function ($name) use ($app) {
-	return 'Hello '.$app->escape($name);
+$app->get('/', function () use ($app) {
+	return 'Hello ';
 });
 	
-$app->get('/public', function(){
+/*$app->get('/public', function(){
     header('Access-Control-Allow-Origin: *');
     header('Content-type: text/plain; charset=utf-8');
     header('Access-Control-Allow-Methods: GET,POST,DELETE');
@@ -35,5 +35,5 @@ $app->get('/', function($date){
 };
 	//return $date -> getDate();
 	return "1";
-  });
+  });*/
 $app->run();
