@@ -22,9 +22,9 @@ $app->get('/print', function(){
   });
 */
 $app->get('/author', function(){
-    
-    echo '<h4>Bulat Minnemullin</h4>';
-	return header('Content-type: text/html; charset=utf-8');;
+    //header('Content-type: text/html; charset=utf-8');
+    //echo '<h4>Bulat Minnemullin</h4>';
+	return new Response ('Error', 404, array('Content-type: text/html'=>'charset=utf-8'));
   });
 $app->get('/info', function(){
     return phpinfo();
