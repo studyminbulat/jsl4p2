@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_ALL); 
-ini_set('display_errors', 1); 
+//error_reporting(E_ALL); 
+//ini_set('display_errors', 1); 
 require 'vendor/autoload.php';
-var_dump($_GET);
+//var_dump($_GET);
 $app = new Silex\Application();
 
 
@@ -30,9 +30,10 @@ $app->get('/info', function(){
   });
 
 $app->get('/', function($date){
-	$date = new class {
-	function getDate() { return date("d/m/Y h:i"); }
+	//$date = new class {
+	//function getDate() { return date("d/m/Y h:i"); }
 };
-	return $date -> getDate();
+	//return $date -> getDate();
+	return "1";
   });
 $app->run();
