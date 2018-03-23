@@ -30,10 +30,10 @@ $app->get('/info', function(){
   });
 */
 $app->get('/', function(){
-	//$date = new class {
-	//function getDate() { return date("d/m/Y h:i"); }
-//};
-	//return $date -> getDate();
-	return "1";
+	$date = new class {
+		function getDate() { return date("d/m/Y h:i"); }
+	};
+	return $date -> getDate();
+	//return "1";
   });
 $app->run();
