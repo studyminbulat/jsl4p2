@@ -34,3 +34,4 @@ $app->get('/info', function(){
 $app->get('/', function(){
 	return $date -> getDate();
   });
+$app->run();
