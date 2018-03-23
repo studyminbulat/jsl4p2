@@ -11,7 +11,7 @@ $app = new Silex\Application();
 $app->get('/hello/{name}', function ($name) use ($app) {
 	return 'Hello '.$app->escape($name);
 });
-	
+	*/
 $app->get('/public', function(){
     
 	$headers = array(
@@ -20,7 +20,7 @@ $app->get('/public', function(){
 		'Access-Control-Allow-Methods'=>'GET,POST,DELETE'
 	);
 	return new Response ('', 200, $headers);
-  });*/
+  });
 $app->get('/print', function(){
     $headers = array('Content-Type' =>'text/plain; charset=utf-8');
     $text = file_get_contents(basename(__FILE__));
