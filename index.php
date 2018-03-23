@@ -24,11 +24,11 @@ $app->get('/print', function(){
 $app->get('/author', function(){
     header('Content-type: text/html; charset=utf-8');
     echo '<h4>Bulat Minnemullin</h4>';
-  });
+  });*/
 $app->get('/info', function(){
     return phpinfo();
   });
-*/
+
 $app->get('/', function(){
 	$date = new class {
 		function getDate() { return date("d/m/Y h:i"); }
