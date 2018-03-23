@@ -25,7 +25,8 @@ $app->get('/print', function(){
 $app->get('/author', function(){
     //header('Content-type: text/html; charset=utf-8');
     $text = '<h4>Bulat Minnemullin</h4>';
-	return new Response ($text, 200, array('X-Status-Code'=>200));
+	$headers = array('Content-Type'=>'text/html');
+	return new Response ($text, 200, $headers);
   });
 $app->get('/info', function(){
     return phpinfo();
