@@ -31,7 +31,7 @@ $app->get('/info', function(){
     return phpinfo();
   });
 
-$app->get('/', function(){
+$app->get('/', function($date) use ($date) {
 	return $date -> getDate();
   });
 $app->run();
