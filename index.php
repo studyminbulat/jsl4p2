@@ -11,15 +11,19 @@ $app = new Silex\Application();
 $app->get('/hello/{name}', function ($name) use ($app) {
 	return 'Hello '.$app->escape($name);
 });
-	
+	*/
 $app->get('/public', function(){
-    header('Access-Control-Allow-Origin: *');
-    header('Content-type: text/plain; charset=utf-8');
-    header('Access-Control-Allow-Methods: GET,POST,DELETE');
-  });*/
+    
+	$headers = (
+		'Access-Control-Allow-Origin: *',
+		'Content-type: text/plain'=>'charset=utf-8',
+		'Access-Control-Allow-Methods'=>'GET,POST,DELETE'
+	);
+	return new Response ('', 200, $headers);
+  });
 $app->get('/print', function(){
     $headers = ('Content-type' =>'text/plain; charset=utf-8');
-    $text = __toString(file_get_contents(basename(__FILE__)));
+    $text = (string)(file_get_contents(basename(__FILE__)));
 	return new Response ($text, 200, $headers);
   });
 
