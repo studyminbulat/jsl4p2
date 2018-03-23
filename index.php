@@ -2,6 +2,7 @@
 //error_reporting(E_ALL); 
 //ini_set('display_errors', 1); 
 require 'vendor/autoload.php';
+use Symfony\Component\HttpFoundation\Response;
 //var_dump($_GET);
 $app = new Silex\Application();
 
