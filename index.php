@@ -23,8 +23,9 @@ $app->get('/public', function(){
   });*/
 $app->get('/print', function(){
     $headers = ('Content-type' =>'text/plain; charset=utf-8');
-    $text = ""; echo  file_get_contents(basename(__FILE__));
-	return new Response ("".$text, 200, $headers);
+    //$text = ""; 
+	//file_get_contents(basename(__FILE__));
+	return new Response ("", 200, $headers);
   });
 
 $app->get('/author', function(){
