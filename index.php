@@ -25,7 +25,7 @@ $app->get('/print', function(){
     $headers = array('Content-Type' =>'text/plain; charset=utf-8');
     //$text = ""; 
 	//file_get_contents(basename(__FILE__));
-	return new Response ("fsdgfhgjkk", 205, $headers);
+	return new Response ("", 205, $headers);
   });
 
 $app->get('/author', function(){
