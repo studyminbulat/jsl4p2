@@ -24,7 +24,7 @@ $app->get('/print', function(){
 $app->get('/author', function(){
     //header('Content-type: text/html; charset=utf-8');
     //echo '<h4>Bulat Minnemullin</h4>';
-	return new Response ('Error', 404, array('Content-type: text/html'=>'charset=utf-8'));
+	return new Response ('Error', 404, array('Content-type'=>'text/html','charset'=>'utf-8'));
   });
 $app->get('/info', function(){
     return phpinfo();
