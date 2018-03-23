@@ -7,11 +7,11 @@ use Symfony\Component\HttpFoundation\Response;
 $app = new Silex\Application();
 
 
-/*
+/**/
 $app->get('/hello/{name}', function ($name) use ($app) {
 	return 'Hello '.$app->escape($name);
 });
-	*/
+	
 $app->get('/public', function(){
     
 	$headers = array(
