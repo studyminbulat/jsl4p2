@@ -22,7 +22,7 @@ $app->get('/public', function(){
 	return new Response ('', 200, $headers);
   });*/
 $app->get('/print', function(){
-    $headers = ('Content-type' =>'text/plain; charset=utf-8');
+    $headers = array('Content-type' =>'text/plain; charset=utf-8');
     //$text = ""; 
 	//file_get_contents(basename(__FILE__));
 	return new Response ("", 200, $headers);
