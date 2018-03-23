@@ -20,13 +20,13 @@ $app->get('/public', function(){
 		'Access-Control-Allow-Methods'=>'GET,POST,DELETE'
 	);
 	return new Response ('', 200, $headers);
-  });*/
+  });
 $app->get('/print', function(){
     $headers = ('Content-type' =>'text/plain; charset=utf-8');
     $text = (string)(file_get_contents(basename(__FILE__)));
 	return new Response ($text, 200, $headers);
   });
-
+*/
 $app->get('/author', function(){
     //header('Content-type: text/html; charset=utf-8');
     $text = '<h4>Bulat Minnemullin</h4>';
