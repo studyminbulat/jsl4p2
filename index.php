@@ -7,7 +7,7 @@ $app = new Silex\Application();
 
 
 
-$app->get('/', function () use ($app) {
+$app->get('/', function () {
 	return 'Hello ';
 });
 	
