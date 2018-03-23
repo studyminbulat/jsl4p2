@@ -5,9 +5,7 @@ require 'vendor/autoload.php';
 var_dump($_GET);
 $app = new Silex\Application();
 
-$date = new class {
-	function getDate() { return date("d/m/Y h:i"); }
-};
+
 
 $app->get('/hello/{name}', function ($name) use ($app) {
 	return 'Hello '.$app->escape($name);
@@ -31,7 +29,10 @@ $app->get('/info', function(){
     return phpinfo();
   });
 
-$app->get('/', function($date) use ($date) {
+$app->get('/', function($date){
+	$date = new class {
+	function getDate() { return date("d/m/Y h:i"); }
+};
 	return $date -> getDate();
   });
 $app->run();
