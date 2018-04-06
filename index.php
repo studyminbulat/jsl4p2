@@ -61,15 +61,14 @@ function getMath($operation, $x1, $x2, $type){
 			$value = pow($x1 , $x2);
 			break;
 			}
-	return "$type";
-	//if ($type)
-	//	return "{\"$text\":$value}";
-	//else
-	//	return "<h1>$text:</h1><h2><span>$value</span></h2>";
+	if ($type)
+		return "{\"$text\":$value}";
+	else
+		return "<h1>$text:</h1><h2><span>$value</span></h2>";
 }   
 $app->get('/{operation}/{x1}/{x2}', function ($operation, $x1, $x2, Request $request) use ($app) {
 	//$type = $request->request->headers->get('Content-Type');
-	$type = $request->headers->get('Content-Type');
+	$type = $request->headers->get('Content-Type')==="application/json"?true;false;
 	return getMath($operation, (int)$x1, (int)$x2, $type);
 });
 $app->run();
