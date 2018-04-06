@@ -1,6 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 $app = new Silex\Application();
 
 $app->get('/hello/{name}', function ($name) use ($app) {
@@ -67,8 +68,8 @@ function getMath($operation, $x1, $x2, $type){
 	//	return "<h1>$text:</h1><h2><span>$value</span></h2>";
 }   
 $app->get('/{operation}/{x1}/{x2}', function ($operation, $x1, $x2, Request $request) use ($app) {
-	//$type = $request->request->headers->get('Content-Type');
-	$type = $request->headers->get('Content-Type');
+	$type = $request->request->headers->get('Content-Type');
+	//$type = $request->headers->get('Content-Type');
 	return getMath($operation, (int)$x1, (int)$x2, $type);
 });
 $app->run();
