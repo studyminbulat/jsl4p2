@@ -36,4 +36,36 @@ $app->get('/', function(){
 	};
 	return $date -> getDate();
   });
+
+function getMath($operation, $x1, $x2, $type){
+	switch ($operation) {
+		case "add":
+			$text = "Сумма";
+			$value = $x1 + $x2;
+			break;
+		case "sub":
+			$text = "Разница";
+			$value = $x1 - $x2;
+			break;
+		case "mpy":
+			$text = "Произведение";
+			$value = $x1 * $x2;
+			break;
+		case "div":
+			$text = "Деление";
+			$value = $x1 / $x2;
+			break;
+		case "pow":
+			$text = "Степень";
+			$value = pow($x1 , $x2);
+			break;
+			}
+	if ($type)
+		return "{\"$text\":$value}";
+	else
+		return "<h1>$text:</h1><h2><span>$value</span></h2>";
+}   
+$app->get('/{operation}/{x1}/{x2}', function ($operation, $x1, $x2) use ($app) {
+	return getMath($operation, (int)$x1, (int)$x2, false);
+});
 $app->run();
