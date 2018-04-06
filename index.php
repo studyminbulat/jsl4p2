@@ -68,7 +68,7 @@ function getMath($operation, $x1, $x2, $type){
 }   
 $app->get('/{operation}/{x1}/{x2}', function ($operation, $x1, $x2, Request $request) use ($app) {
 	//$type = $request->request->headers->get('Content-Type');
-	$type = $request->headers->get('Content-Type')==="application/json"?true;false;
+	$type = $request->headers->get('Content-Type')==="application/json"?true:false;
 	return getMath($operation, (int)$x1, (int)$x2, $type);
 });
 $app->run();
