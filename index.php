@@ -37,7 +37,7 @@ $app->get('/', function(){
 	return $date -> getDate();
   });
 
-function getMath($operation, $x1, $x2, $type, $type2){
+function getMath($operation, $x1, $x2, $type){
 	switch ($operation) {
 		case "add":
 			$text = "Сумма";
@@ -60,15 +60,15 @@ function getMath($operation, $x1, $x2, $type, $type2){
 			$value = pow($x1 , $x2);
 			break;
 			}
-	return "$type<br>$type2";
+	return "$type";
 	//if ($type)
 	//	return "{\"$text\":$value}";
 	//else
 	//	return "<h1>$text:</h1><h2><span>$value</span></h2>";
 }   
 $app->get('/{operation}/{x1}/{x2}', function ($operation, $x1, $x2, Request $request) use ($app) {
-	$type = $request->request->headers->get('Content-Type');
-	$type2 = $request->headers->get('Content-Type');
-	return getMath($operation, (int)$x1, (int)$x2, $type, $type2);
+	//$type = $request->request->headers->get('Content-Type');
+	$type = $request->headers->get('Content-Type');
+	return getMath($operation, (int)$x1, (int)$x2, $type);
 });
 $app->run();
